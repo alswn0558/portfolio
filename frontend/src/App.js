@@ -10,6 +10,7 @@ const ChartWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   height: 40vh;
+  padding: 1px;
 `;
 
 const ChartContainer = styled.div`
@@ -17,7 +18,7 @@ const ChartContainer = styled.div`
   flex: 1;
   width: 65%;
   height: 95%;
-  padding: 1px;
+  padding: 5px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   justify-content: center;
   align-items: center;
@@ -32,8 +33,8 @@ const Title = styled.h1`
 `;
 
 const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 90%;
 `;
 
 const Information = styled.div`
