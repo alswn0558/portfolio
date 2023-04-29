@@ -11,23 +11,32 @@ const BarChart = (props) => {
       type: "bar",
       data: {
         // 차트 데이터 설정
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        // 차트 데이터 설정
+        labels: ["외향/내향", "직관/현실", "사고/감정", "계획/탐색"],
         datasets: [
           {
-            label: "My First Dataset",
-            data: [65, 59, 80, 81, 56, 55, 40],
-            backgroundColor: "rgba(255, 99, 132, 0.2)",
-            borderColor: "rgba(255, 99, 132, 1)",
-            borderWidth: 1,
+            label: "My MBTI",
+            data: [48, 73, 82, 55],  // 여기 DB에서 가져와야 됨
+            backgroundColor: "#FFC0CB",
+          },
+          {
+            label: "Other MBTI",
+            data: [100-48, 100-73, 100-82, 100-55],
+            backgroundColor: "#87CEFA",
           },
         ],
       },
       options: {
         scales: {
+          x: {
+            stacked: true,
+            max: 100,
+          },
           y: {
-            beginAtZero: true,
+            stacked: true,
           },
         },
+        indexAxis: 'y',
       },
     });
     return () => {
