@@ -1,8 +1,21 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Chart from 'chart.js/auto';
 
 const RadarChart = (props) => {
   const chartRef = useRef(null);
+  const [data, setData] = useState('');
+
+  useEffect(() => {
+    fetch('http://localhost:3001/ability')
+      .then(response => response.json())
+      .then(data => {
+        const { humanities, Communication, global, creative, specialty } = data;
+        setData({ humanities, Communication, global, creative, specialty });
+      }, [])
+      .catch(error => {
+        console.log(error)
+      });
+  }, []);
 
   useEffect(() => {
     const myChartRef = chartRef.current.getContext("2d");
@@ -15,7 +28,7 @@ const RadarChart = (props) => {
         datasets: [
           {
             label: "나의 역량",
-            data: [70.56, 63.92, 61.31, 55.03, 62.98],  // 이 부분 DB에서 가져와야 됨 
+            data: [data.humanities, data.Communication, data.global, data.creative, data.specialty],  // 이 부분 DB에서 가져와야 됨 
             backgroundColor: "rgba(255, 99, 132, 0.2)",
             borderColor: "rgba(255, 99, 132, 1)",
             borderWidth: 1,
@@ -44,7 +57,7 @@ const RadarChart = (props) => {
     return () => {
       myChart.destroy(); // 이전 차트 파괴
     };
-  }, []);
+  }, [data.humanities, data.Communication, data.global, data.creative, data.specialty]);
 
   return <canvas ref={chartRef} />;
 };
