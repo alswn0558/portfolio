@@ -1,26 +1,21 @@
 import { Injectable } from '@nestjs/common';
-import { CreateAbilityDto } from './dto/create-ability.dto';
-import { UpdateAbilityDto } from './dto/update-ability.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { ability, abilityDocument } from './schemas/ability.schema';
 
 @Injectable()
 export class AbilityService {
-  create(createAbilityDto: CreateAbilityDto) {
-    return 'This action adds a new ability';
+  constructor(
+    @InjectModel(ability.name) private abilityModel: Model<abilityDocument>,
+  ) {}
+
+  async findOne(): Promise<ability> {
+    const response = await this.abilityModel.findOne({ name: 'minju' }).exec();
+    return response;
   }
 
-  findAll() {
-    return `This action returns all ability`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} ability`;
-  }
-
-  update(id: number, updateAbilityDto: UpdateAbilityDto) {
-    return `This action updates a #${id} ability`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} ability`;
+  async create(ability): Promise<ability> {
+    const response = await this.abilityModel.create(ability);
+    return response;
   }
 }

@@ -1,20 +1,20 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
-export type mbtiDocument = HydratedDocument<ability>;
+export type abilityDocument = HydratedDocument<ability>;
 
 @Schema()
 export class ability {
   @Prop()
-  e: number;
+  humanities: number;
   @Prop()
-  n: number;
+  Communication: number;
   @Prop()
-  t: number;
+  global: number;
   @Prop()
-  j: number;
+  creative: number;
   @Prop()
-  id: number;
+  specialty: number;
   @Prop()
   name: string;
 }
