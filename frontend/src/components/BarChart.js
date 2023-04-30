@@ -1,10 +1,23 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Chart from 'chart.js/auto';
 
 const BarChart = (props) => {
   const chartRef = useRef(null);
+  const [data, setData] = useState('');
 
   useEffect(() => {
+    fetch('http://localhost:3001/mbti')
+      .then(response => response.json())
+      .then(data => {
+        const { m, b, t, i } = data;
+        setData({ m, b, t, i });
+      }, [])
+      .catch(error => {
+        console.log(error)
+      });
+  }, []);
+
+  useEffect(() => {    
     const myChartRef = chartRef.current.getContext("2d");
 
     const myChart = new Chart(myChartRef, {
@@ -16,12 +29,12 @@ const BarChart = (props) => {
         datasets: [
           {
             label: "My MBTI",
-            data: [48, 73, 82, 55],  // 여기 DB에서 가져와야 됨
+            data: [data.m, data.b, data.t, data.i],  // 여기 DB에서 가져와야 됨
             backgroundColor: "#FFC0CB",
           },
           {
             label: "Other MBTI",
-            data: [100-48, 100-73, 100-82, 100-55],
+            data: [100-data.m, 100-data.b, 100-data.t, 100-data.i],
             backgroundColor: "#87CEFA",
           },
         ],
@@ -42,7 +55,7 @@ const BarChart = (props) => {
     return () => {
       myChart.destroy(); // 이전 차트 파괴
     };
-  }, []);
+  }, [data.m, data.b, data.t, data.i]);
 
   return <canvas ref={chartRef} />;
 };
