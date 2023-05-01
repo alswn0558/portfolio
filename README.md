@@ -1,33 +1,56 @@
-# Portfolio
-<img width="995" alt="image" src="https://user-images.githubusercontent.com/63691589/235383016-010340a1-332b-4839-9b91-40c6531ad0b6.png">
-[My Portfolio]
-2023 Intel SW Engineer Intern Task 
+# Portfolio - *2023 Intel SW Engineer Intern Task*
 
-Run Screen
-<img width="778" alt="image" src="https://user-images.githubusercontent.com/63691589/235382609-c40792b0-5ae7-46c8-b069-ba6bbabf8f4c.png">
+## 🥕 System Architecture
+<img width="530" alt="image" src="https://user-images.githubusercontent.com/63691589/235383674-fd54385c-99eb-45c4-8f41-52ac6b0caa13.png">
 
-🥕Installation
+
+## 🥕 Run Screen
+<img width="530" alt="image" src="https://user-images.githubusercontent.com/63691589/235383743-3c8513b1-613d-458f-ad79-f75332007745.png">
+
+  
+My Portfolio consists of a total of 4 parts.
+ - **My brief information** : School information, github and website
+ - **My photo** 
+ - **My radial competency graph** : My Humanities, Communication, Global, Creativity, Professional Percentage and Average Percentage Comparison
+ - **My mbti**: My MBTI and percentage by category
+
+## Installation
+
 To run this project, you'll need to have the following software installed:
 
-npm
+-   [Node.js](https://nodejs.org/)
+-   [npm](https://www.npmjs.com/)
+
 You can install the required dependencies by running the following command in the project directory:
 
-npm install
+`npm install` 
+
 The following libraries are also required:
 
-NestJS
-Chart.js
-React
-styled-components
-Mongoose
+-   [NestJS](https://nestjs.com/)
+-   [Chart.js](https://www.chartjs.org/)
+-   [React](https://reactjs.org/)
+-   [styled-components](https://styled-components.com/)
+-   [Mongoose](https://mongoosejs.com/)
 
-🥕Usage
-To start the development server, run:
+## 🥕 Usage
 
-npm run start
-You should then be able to access the application by navigating to http://localhost:3000 in your web browser.
+To start the development server :
 
-🥕Contributing
-Minju Yang
+`cd backend` 
 
-I hope that helps you get started with your README file! Let me know if you have any other questions.
+`npm run start` 
+
+You should then be able to access the application by navigating to `http://localhost:3001` in your web browser.
+
+To start the development front :
+
+`cd frontend` 
+
+`npm run start` 
+
+You should then be able to access the application by navigating to `http://localhost:3000` in your web browser.
+
+## 🥕 Contributing
+
+Yang minju
