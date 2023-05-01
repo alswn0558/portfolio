@@ -64,3 +64,9 @@ You should then be able to access the application by navigating to `http://local
 ## 🥕 Contributing
 
 Yang minju
+
+
+
+
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/63691589/235388021-dc729547-d2a0-4cc9-8b89-8446c445cd1f.png">
+
