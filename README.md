@@ -1,4 +1,14 @@
 # Portfolio - *2023 Intel SW Engineer Intern Task*
+This is my first time doing front-end development. When I was only in charge of the back end, I was vague about the front end, but it was nice to be able to implement it myself, even simply, at this opportunity.
+### Difficulties:
+
+Cross-Origin Resource Sharing (CORS) error
+
+- When running both Front and Back locally, an error occurred due to the web browser's security policy. To fix this, app.enableCors() was used.
+
+Front-end implementation 
+
+- I didn't have much time, but I didn't have experience in front-end development, so it was hard. As much as possible, I reduced the development time by looking at and understanding the previous projects.
 
 ## 🥕 System Architecture
 <img width="630" alt="image" src="https://user-images.githubusercontent.com/63691589/235383674-fd54385c-99eb-45c4-8f41-52ac6b0caa13.png">
