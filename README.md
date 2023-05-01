@@ -14,7 +14,7 @@ My Portfolio consists of a total of 4 parts.
  - **My radial competency graph** : My Humanities, Communication, Global, Creativity, Professional Percentage and Average Percentage Comparison
  - **My mbti**: My MBTI and percentage by category
 
-## Installation
+## 🥕 Installation
 
 To run this project, you'll need to have the following software installed:
 
